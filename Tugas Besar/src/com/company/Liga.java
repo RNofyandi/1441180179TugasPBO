@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.lang.String;
 
 public class Liga {
     private String namaLiga;
@@ -18,8 +19,15 @@ public class Liga {
         this.namaLiga = namaLiga;
     }
 
-    public ArrayList<Divisi> getDaftarDivisi() {
-        return daftarDivisi;
+    public void getDaftarDivisi(String ligaCari) {
+        if (ligaCari == getNamaLiga()){
+            for (int j = 0; j < daftarDivisi.size(); j++){
+                System.out.println(daftarDivisi.get(j));
+            }
+        }
+        else{
+            System.out.println("Tidak Ditemukan");
+        }
     }
 
     public void setDaftarDivisi(Divisi divisi)
@@ -37,8 +45,6 @@ public class Liga {
 
     @Override
     public String toString() {
-        return "Liga{" +
-                "namaLiga='" + namaLiga + '\'' +
-                '}';
+        return "Liga " +namaLiga;
     }
 }
